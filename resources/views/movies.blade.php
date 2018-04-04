@@ -7,7 +7,11 @@
 			@foreach ($movies as $m)
 			<div class="col-4 text-center" style="margin-bottom: 30px" >
 			<a href="{{action('movieController@show',['id' => $m->imdbID])}}">
-				<img class="mx-auto d-block rounded" src="{{$m->Poster}}" width="50%" alt="Poster">
+				@if( $m->Poster != 'N/A')
+					<img class="mx-auto d-block rounded" src="{{$m->Poster}}" width="50%" alt="Poster">	
+				@else
+					<img class="mx-auto d-block rounded" src="{{ asset('image/noimage.png') }}" width="50%" alt="Poster">
+				@endif				
 			</a>
 			<h2 class="text-center">{{$m->Title}}</h2>
 			<div>

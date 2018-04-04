@@ -13,7 +13,11 @@
     </div>
     <div class="row">
         <div class="col-3">
-            <img class="mx-auto d-block" src="{{$movies['Poster']}}" alt="Poster" width="80%" >
+            @if( $movies['Poster'] != 'N/A')
+                <img class="mx-auto d-block rounded" src="{{$m->Poster}}" width="80%" alt="Poster">	
+            @else
+                <img class="mx-auto d-block rounded" src="{{ asset('image/noimage.png') }}" width="80%" alt="Poster">
+            @endif
         </div>
         <div class="col-2 text-justify">
                 <h4>Año</h4>
