@@ -14,7 +14,7 @@
     <div class="row">
         <div class="col-3">
             @if( $movies['Poster'] != 'N/A')
-                <img class="mx-auto d-block rounded" src="{{$m->Poster}}" width="80%" alt="Poster">	
+                <img class="mx-auto d-block rounded" src="{{$movies['Poster']}}" width="80%" alt="Poster">	
             @else
                 <img class="mx-auto d-block rounded" src="{{ asset('image/noimage.png') }}" width="80%" alt="Poster">
             @endif
